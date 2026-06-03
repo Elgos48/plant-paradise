@@ -4,6 +4,9 @@ import { Sprout } from 'lucide-react';
 import lidahMertua from '../assets/lidah-mertua.jpeg';
 import lidahBuaya from '../assets/lidah-buaya.jpg';
 import sirihGading from '../assets/sirih-gading.jpg';
+import spongebob from '../assets/spongebob-backgrounds.jpg';
+import patrick from '../assets/dotted-pattern-background.jpg';
+import squiward from '../assets/ocean-bg.jpg';
 
 const plants = [
   { id: 1, 
@@ -11,18 +14,21 @@ const plants = [
     name: 'Lidah Mertua', 
     desc: 'Tanaman lidah mertua (Sansevieria) adalah pembersih udara alami yang sangat baik untuk rumah. Tanaman ini menyerap racun berbahaya (seperti formaldehida dan benzena) dari cat atau perabotan, menghasilkan oksigen di malam hari, menghilangkan bau tak sedap, serta memberikan efek relaksasi.', 
     url: 'https://id.wikipedia.org/wiki/Lidah_mertua',
+    bgimage: patrick,
     color: 'bg-[#FF6B6B]' },
   { id: 2,
      image: lidahBuaya, 
      name: 'Lidah Buaya', 
      desc: 'Tanaman Lidah buaya (Aloe vera) adalah tanaman herbal dengan daun berdaging tebal yang kaya akan air, vitamin, mineral, dan antioksidan. Tanaman serbaguna ini sangat populer untuk perawatan kulit, penyembuhan luka, dan pengobatan tradisional, serta dapat diolah menjadi produk makanan dan minuman yang menyegarkan.', 
      url: 'https://id.wikipedia.org/wiki/Lidah_buaya',
+     bgimage: spongebob,
      color: 'bg-[#FFD166]' },
   { id: 3, 
     image: sirihGading, 
     name: 'Sirih Gading', 
     desc: 'Tanaman sirih gading (Epipremnum aureum) sangat populer karena kemampuannya menyerap racun dan polutan di udara (seperti formaldehida dan benzena) serta melepaskan oksigen. Tanaman ini juga berfungsi sebagai dekorasi estetis yang mudah dirawat sebagai tanaman hias gantung atau tanaman air di dalam ruangan.', 
     url: 'https://id.wikipedia.org/wiki/Sirih_gading',
+    bgimage: squiward,
     color: 'bg-[#40E0D0]' },
 ];
 
@@ -76,6 +82,11 @@ export default function PlantTypes() {
               }}
               className={`${plant.color} rounded-3xl p-6 shadow-xl border-4 border-white/20 backdrop-blur-md relative overflow-hidden group cursor-none`}
             >
+              {/* Background overlay */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-10"
+                style={{ backgroundImage: `url(${plant.bgimage})` }}
+              />
               {/* Bubble decoration inside card */}
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
               
