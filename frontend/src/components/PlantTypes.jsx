@@ -95,8 +95,13 @@ export default function PlantTypes() {
                   {plant.desc}
                 </p>
 
-                <a href={plant.url} target="_blank" rel="noopener noreferrer" className="inline-block w-full px-6 py-3 bg-white/20 text-white font-semibold rounded-full shadow-md hover:bg-white/30 transition-colors duration-300">
-                  <span className="text-white px-20">Learn more</span>
+                <a
+                  href={plant.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center px-6 py-3 bg-white/20 text-white font-semibold rounded-full shadow-md hover:bg-white/30 transition-colors duration-300 text-center"
+                >
+                  Learn more
                 </a>
               </div>
             </motion.div>
