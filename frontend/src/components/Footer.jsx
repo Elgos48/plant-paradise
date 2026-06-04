@@ -58,7 +58,6 @@ export default function Footer() {
             <li><a href="#" className="hover:text-sand transition-colors">Plant Types</a></li>
             <li><a href="#" className="hover:text-sand transition-colors">Care Guides</a></li>
             <li><a href="#" className="hover:text-sand transition-colors">Growth Timeline</a></li>
-            <li><a href="#" className="hover:text-sand transition-colors">FAQ</a></li>
           </ul>
         </div>
 
@@ -68,7 +67,7 @@ export default function Footer() {
             <Anchor className="w-5 h-5" /> Our Crew (Kel.1)
           </h4>
           <p className="text-gray-400 font-medium">
-            Acelynn, Annika, Jordana, Karen, Phillipus, Eleazar, Metta, Reyna, Julian.
+            Acelynn, Annika, Jordana, Karen, Phillipus, Eleazar, Metta, Reyna, Julian, Cheryl, Clara, Declan, Florence, Justin, Kenjiyory, Natalie, Rafaelle, Virenka.
           </p>
         </div>
 

@@ -1,19 +1,37 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import bubbleSfx from '../assets/spongebob-bubble-transition.mp3';
 
 const StartupAnimation = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
+  
+  // SOLUSI 1: Inisialisasi Audio di dalam useState agar HANYA DIBUAT SEKALI
+  const [audio] = useState(() => new Audio(bubbleSfx));
 
   useEffect(() => {
-    // Hide animation after 3 seconds
+    audio.volume = 0.35;
+
+    const tryPlayAudio = () => {
+      audio.play().catch(() => {});
+    };
+
+    tryPlayAudio();
+    
+    window.addEventListener('click', tryPlayAudio, { once: true });
+
     const timer = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onComplete, 1000);
     }, 3000);
-    return () => clearTimeout(timer);
-  }, [onComplete]);
 
-  // Generate random bubbles
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('click', tryPlayAudio);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [audio]); 
+
   const [bubbles] = useState(() => 
     Array.from({ length: 25 }).map((_, i) => ({
       id: i,
@@ -33,7 +51,6 @@ const StartupAnimation = ({ onComplete }) => {
           exit={{ opacity: 0, y: '-100%' }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          {/* Bubbles */}
           {bubbles.map(bubble => (
             <motion.div
               key={bubble.id}
@@ -57,7 +74,6 @@ const StartupAnimation = ({ onComplete }) => {
             />
           ))}
 
-          {/* Logo / Text */}
           <motion.div
             className="z-10 text-center text-white"
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
