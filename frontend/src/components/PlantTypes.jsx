@@ -1,19 +1,20 @@
 import { motion } from 'framer-motion';
 import { Sprout } from 'lucide-react';
 
-import lidahMertua from '../assets/lidah-mertua.jpeg';
+import snakePlant from '../assets/snake-plant.jpg';
 import lidahBuaya from '../assets/lidah-buaya.jpg';
 import sirihGading from '../assets/sirih-gading.jpg';
+import dolar from '../assets/tanaman-dolar.jpg';
 import spongebob from '../assets/spongebob-backgrounds.jpg';
 import patrick from '../assets/dotted-pattern-background.jpg';
 import squiward from '../assets/ocean-bg.jpg';
 
 const plants = [
   { id: 1, 
-    image: lidahMertua, 
-    name: 'Lidah Mertua', 
+    image: snakePlant, 
+    name: 'Snake Plant', 
     desc: 'Tanaman lidah mertua (Sansevieria) adalah pembersih udara alami yang sangat baik untuk rumah. Tanaman ini menyerap racun berbahaya (seperti formaldehida dan benzena) dari cat atau perabotan, menghasilkan oksigen di malam hari, menghilangkan bau tak sedap, serta memberikan efek relaksasi.', 
-    url: 'https://id.wikipedia.org/wiki/Lidah_mertua',
+    url: 'https://www.plantsandflowersfoundationholland.org/en/indoor-plantguide/snake-plant/',
     bgimage: patrick,
     color: 'bg-[#FF6B6B]' },
   { id: 2,
@@ -30,6 +31,13 @@ const plants = [
     url: 'https://id.wikipedia.org/wiki/Sirih_gading',
     bgimage: squiward,
     color: 'bg-[#40E0D0]' },
+  { id: 4, 
+    image: dolar, 
+    name: 'Tanaman Dolar',
+    desc: 'Tanaman dolar (Zamioculcas zamiifolia) adalah tanaman hias yang sangat tahan terhadap kondisi lingkungan yang kurang ideal. Tanaman ini memiliki daun yang berkilau dan tahan terhadap kekeringan, membuatnya menjadi pilihan yang sempurna untuk pemula dalam merawat tanaman indoor.', 
+    url: 'https://jurnal.stkipmb.ac.id/11-manfaat-tanaman-dolar-penarik-rezeki-ampuh-e-jurnal/',
+    bgimage: patrick,
+    color: 'bg-[#9B5DE5]' }
 ];
 
 const containerVariants = {
