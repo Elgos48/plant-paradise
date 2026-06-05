@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sprout } from 'lucide-react';
+import { Sprout, Fish } from 'lucide-react';
 
 import snakePlant from '../assets/snake-plant.jpg';
 import lidahBuaya from '../assets/lidah-buaya.jpg';
@@ -7,36 +7,41 @@ import sirihGading from '../assets/sirih-gading.jpg';
 import dolar from '../assets/tanaman-dolar.jpg';
 import spongebob from '../assets/spongebob-backgrounds.jpg';
 import patrick from '../assets/dotted-pattern-background.jpg';
-import squiward from '../assets/ocean-bg.jpg';
+import squiward from '../assets/ocean-bg.jpeg';
+import cross from '../assets/cross-background.jpg';
 
 const plants = [
   { id: 1, 
     image: snakePlant, 
-    name: 'Snake Plant', 
-    desc: 'Tanaman lidah mertua (Sansevieria) adalah pembersih udara alami yang sangat baik untuk rumah. Tanaman ini menyerap racun berbahaya (seperti formaldehida dan benzena) dari cat atau perabotan, menghasilkan oksigen di malam hari, menghilangkan bau tak sedap, serta memberikan efek relaksasi.', 
+    name: 'Snake Plant (Dracaena trifasciata)', 
+    desc: 'Snake plant merupakan tanaman hias yang terkenal karena daya tahannya yang tinggi. Tanaman ini juga membantu meningkatkan kualitas udara dan cocok ditempatkan di dalam maupun luar ruangan.', 
+    care: ['Dapat diletakkan di tempat terang maupun teduh.','Siram sekitar 1 kali seminggu atau saat tanah mulai kering.','Hindari penyiraman berlebihan.','Berikan pupuk secukupnya setiap beberapa bulan.'],
     url: 'https://www.plantsandflowersfoundationholland.org/en/indoor-plantguide/snake-plant/',
     bgimage: patrick,
     color: 'bg-[#FF6B6B]' },
   { id: 2,
      image: lidahBuaya, 
-     name: 'Lidah Buaya', 
-     desc: 'Tanaman Lidah buaya (Aloe vera) adalah tanaman herbal dengan daun berdaging tebal yang kaya akan air, vitamin, mineral, dan antioksidan. Tanaman serbaguna ini sangat populer untuk perawatan kulit, penyembuhan luka, dan pengobatan tradisional, serta dapat diolah menjadi produk makanan dan minuman yang menyegarkan.', 
+     name: 'Lidah Buaya (Aloe vera)', 
+     desc: 'Lidah buaya merupakan tanaman sukulen yang memiliki daun tebal dan mengandung banyak air. Tanaman ini dikenal karena manfaatnya untuk kesehatan, kecantikan, dan pengobatan tradisional.', 
+     care: ['Letakkan di tempat yang mendapat cahaya matahari cukup.','Siram 1-2 kali seminggu.','Gunakan media tanam yang gembur dan tidak mudah tergenang air.','Berikan pupuk organik secara berkala.'],
      url: 'https://id.wikipedia.org/wiki/Lidah_buaya',
      bgimage: spongebob,
      color: 'bg-[#FFD166]' },
   { id: 3, 
     image: sirihGading, 
-    name: 'Sirih Gading', 
-    desc: 'Tanaman sirih gading (Epipremnum aureum) sangat populer karena kemampuannya menyerap racun dan polutan di udara (seperti formaldehida dan benzena) serta melepaskan oksigen. Tanaman ini juga berfungsi sebagai dekorasi estetis yang mudah dirawat sebagai tanaman hias gantung atau tanaman air di dalam ruangan.', 
+    name: 'Sirih Gading (Epipremnum aureum)', 
+    desc: 'Sirih gading merupakan tanaman merambat yang memiliki daun hijau bercorak kuning atau putih. Tanaman ini mudah tumbuh, mudah diperbanyak, dan sering digunakan sebagai tanaman hias indoor.', 
+    care: ['Letakkan di tempat yang terang tetapi tidak terkena sinar matahari langsung.','Siram saat media tanam mulai kering.','Pangkas batang yang terlalu panjang agar tetap rapi.','Berikan pupuk cair atau kompos secara berkala.'],
     url: 'https://id.wikipedia.org/wiki/Sirih_gading',
     bgimage: squiward,
     color: 'bg-[#40E0D0]' },
   { id: 4, 
     image: dolar, 
-    name: 'Tanaman Dolar',
-    desc: 'Tanaman dolar (Zamioculcas zamiifolia) adalah tanaman hias yang sangat tahan terhadap kondisi lingkungan yang kurang ideal. Tanaman ini memiliki daun yang berkilau dan tahan terhadap kekeringan, membuatnya menjadi pilihan yang sempurna untuk pemula dalam merawat tanaman indoor.', 
+    name: 'Tanaman Dolar (Zamioculcas zamiifolia)',
+    desc: 'Dollar plant merupakan tanaman hias dengan daun hijau mengilap yang melambangkan keberuntungan dan kemakmuran. Tanaman ini sangat tahan terhadap kondisi minim cahaya dan perawatan yang sederhana.', 
+    care: ['Letakkan di tempat yang teduh atau mendapat cahaya tidak langsung.','Siram 1–2 minggu sekali.','Pastikan media tanam memiliki drainase yang baik.','Bersihkan daun secara berkala agar tetap mengilap.'],
     url: 'https://jurnal.stkipmb.ac.id/11-manfaat-tanaman-dolar-penarik-rezeki-ampuh-e-jurnal/',
-    bgimage: patrick,
+    bgimage: cross,
     color: 'bg-[#9B5DE5]' }
 ];
 
@@ -58,6 +63,65 @@ const itemVariants = {
 export default function PlantTypes() {
   return (
     <section id="plants" className="py-20 px-6 min-h-screen bg-gradient-to-b from-[#40E0D0] to-[#0A192F] relative">
+      {/* Swimming fish */}
+      <motion.div 
+        className="absolute top-10"
+        initial={{ x: -100 }}
+        animate={{ x: '100vw' }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      >
+        <Fish className="w-8 h-8 text-coral drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-70"
+        initial={{ x: '100vw', scaleX: -1 }}
+        animate={{ x: -100, scaleX: -1 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 5 }}
+      >
+        <Fish className="w-6 h-6 text-sand drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-100"
+        initial={{ x: -100 }}
+        animate={{ x: '100vw' }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      >
+        <Fish className="w-8 h-8 text-coral drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-120"
+        initial={{ x: '100vw', scaleX: -1 }}
+        animate={{ x: -100, scaleX: -1 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 5 }}
+      >
+        <Fish className="w-6 h-6 text-coral drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-300"
+        initial={{ x: -100 }}
+        animate={{ x: '100vw' }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear"}}
+      >
+        <Fish className="w-6 h-6 text-sand drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-470"
+        initial={{ x: '100vw', scaleX: -1 }}
+        animate={{ x: -100, scaleX: -1 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 5 }}
+      >
+        <Fish className="w-6 h-6 text-sand drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-630"
+        initial={{ x: -100 }}
+        animate={{ x: '100vw', scaleX: -1 }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 5 }}
+      >
+        <Fish className="w-6 h-6 text-coral drop-shadow-lg" />
+      </motion.div>
+
+
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -77,7 +141,7 @@ export default function PlantTypes() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {plants.map((plant) => (
             <motion.div
@@ -113,6 +177,16 @@ export default function PlantTypes() {
                 <p className="text-white/90 mb-6 flex-grow font-medium text-lg leading-relaxed">
                   {plant.desc}
                 </p>
+                <div className="bg-white/20 rounded-lg p-4 mb-6">
+                  <h4 className="text-lg font-bold text-white mb-2">Perawatan:</h4>
+                  <ul className="list-disc list-inside text-white/90">
+                    {plant.care.map((step, index) => (
+                      <li key={index} className="mb-1">
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <a
                   href={plant.url}

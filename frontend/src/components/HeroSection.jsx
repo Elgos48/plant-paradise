@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Leaf } from 'lucide-react';
+import oceanbg from '../assets/ocean-bg.jpeg';
 
 export default function HeroSection() {
   const [bubbles, setBubbles] = useState([]);
@@ -18,7 +19,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-[#00BFFF] to-[#40E0D0]">
+    <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-[#00BFFF] to-[#40E0D0]" 
+    style={{ backgroundImage: `url(${oceanbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       {/* Light rays from top */}
       <div className="absolute top-0 left-0 w-full h-[50vh] opacity-30 mix-blend-overlay pointer-events-none" 
            style={{
@@ -61,8 +63,11 @@ export default function HeroSection() {
           className="mb-6 flex items-center justify-center gap-4"
         >
           <Leaf className="w-12 h-12 text-seaweed drop-shadow-md animate-pulse" />
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white text-shadow-bubbly drop-shadow-xl tracking-wide">
-            Plant Paradise <br /> Under The Sea
+          <h1
+            className="text-5xl md:text-7xl font-extrabold text-[#FFD166] text-shadow-bubbly drop-shadow-xl tracking-wide"
+            style={{ fontFamily: 'var(--font-spongebob)' }}
+          >
+            SPONGEGARDEN
           </h1>
           <Leaf className="w-12 h-12 text-seaweed drop-shadow-md animate-pulse" style={{ transform: 'scaleX(-1)' }} />
         </motion.div>
@@ -71,7 +76,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-xl md:text-2xl text-sand font-semibold mb-10 max-w-2xl drop-shadow-md"
+          className="text-xl md:text-2xl text-white font-semibold mb-10 max-w-2xl drop-shadow-md"
         >
           Learn everything about growing healthy and beautiful plants in our playful underwater world.
         </motion.p>
