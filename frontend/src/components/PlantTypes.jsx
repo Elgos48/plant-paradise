@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sprout, Fish } from 'lucide-react';
+import { Sprout, Fish, Shell, Anchor } from 'lucide-react';
 
 import snakePlant from '../assets/snake-plant.jpg';
 import lidahBuaya from '../assets/lidah-buaya.jpg';
@@ -61,8 +61,39 @@ const itemVariants = {
 };
 
 export default function PlantTypes() {
+  const bubbles = Array.from({ length: 20 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 30 + 10,
+    left: Math.random() * 100,
+    duration: Math.random() * 10 + 5,
+    delay: Math.random() * 5,
+  }));
+
   return (
-    <section id="plants" className="py-20 px-6 min-h-screen bg-gradient-to-b from-[#40E0D0] to-[#0A192F] relative">
+    <section id="plants" className="py-20 px-6 min-h-screen bg-gradient-to-b from-[#40E0D0] to-[#0A192F] relative overflow-hidden">
+      {/* Background Bubbles */}
+      {bubbles.map((bubble) => (
+        <motion.div
+          key={bubble.id}
+          className="absolute rounded-full bg-white/10 backdrop-blur-sm pointer-events-none"
+          style={{
+            width: bubble.size,
+            height: bubble.size,
+            left: `${bubble.left}%`,
+            bottom: -50,
+          }}
+          animate={{
+            y: [0, -window.innerHeight - 500],
+            x: [0, Math.random() * 50 - 25, 0],
+          }}
+          transition={{
+            duration: bubble.duration,
+            repeat: Infinity,
+            ease: "linear",
+            delay: bubble.delay,
+          }}
+        />
+      ))}
       {/* Swimming fish */}
       <motion.div 
         className="absolute top-10"
@@ -119,6 +150,22 @@ export default function PlantTypes() {
         transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 5 }}
       >
         <Fish className="w-6 h-6 text-coral drop-shadow-lg" />
+      </motion.div>
+
+      {/* Floating Shells */}
+      <motion.div 
+        className="absolute top-[20%] left-[10%]"
+        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Shell className="w-10 h-10 text-sand/50 drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute top-[60%] right-[15%]"
+        animate={{ y: [0, -30, 0], rotate: [0, -15, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      >
+        <Anchor className="w-12 h-12 text-[#9B59B6]/40 drop-shadow-lg" />
       </motion.div>
 
 

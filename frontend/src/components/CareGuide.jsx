@@ -49,8 +49,55 @@ const careItems = [
 ];
 
 export default function CareGuide() {
+  const bubbles = Array.from({ length: 15 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 20 + 5,
+    left: Math.random() * 100,
+    duration: Math.random() * 12 + 8,
+    delay: Math.random() * 5,
+  }));
+
   return (
-    <section className="py-24 px-6 bg-[#0A192F] relative text-white z-10">
+    <section className="py-24 px-6 bg-[#0A192F] relative text-white z-10 overflow-hidden">
+      {/* Deep Sea Bubbles */}
+      {bubbles.map((bubble) => (
+        <motion.div
+          key={bubble.id}
+          className="absolute rounded-full bg-blue-300/10 backdrop-blur-sm pointer-events-none"
+          style={{
+            width: bubble.size,
+            height: bubble.size,
+            left: `${bubble.left}%`,
+            bottom: -20,
+          }}
+          animate={{
+            y: [0, -window.innerHeight - 200],
+            x: [0, Math.random() * 30 - 15, 0],
+          }}
+          transition={{
+            duration: bubble.duration,
+            repeat: Infinity,
+            ease: "linear",
+            delay: bubble.delay,
+          }}
+        />
+      ))}
+
+      {/* Seaweed Background Decor */}
+      <svg className="absolute bottom-0 left-[10%] w-20 h-40 text-seaweed/30" viewBox="0 0 100 200" fill="currentColor">
+         <motion.path 
+            d="M50,200 Q20,100 50,0 Q80,100 50,200 Z"
+            animate={{ d: ["M50,200 Q20,100 50,0 Q80,100 50,200 Z", "M50,200 Q50,100 80,10 Q20,100 50,200 Z", "M50,200 Q20,100 50,0 Q80,100 50,200 Z"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+         />
+      </svg>
+      <svg className="absolute bottom-0 right-[15%] w-16 h-32 text-green-700/30" viewBox="0 0 100 200" fill="currentColor">
+         <motion.path 
+            d="M50,200 Q20,100 50,0 Q80,100 50,200 Z"
+            animate={{ d: ["M50,200 Q20,100 50,0 Q80,100 50,200 Z", "M50,200 Q0,100 20,20 Q80,100 50,200 Z", "M50,200 Q20,100 50,0 Q80,100 50,200 Z"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+         />
+      </svg>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-shadow-bubbly mb-4 text-[#40E0D0]">
