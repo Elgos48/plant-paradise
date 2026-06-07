@@ -49,7 +49,7 @@ export default function MediaSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FFD166] text-shadow-bubbly mb-4" style={{ fontFamily: 'var(--font-spongebob)' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FFD166] text-shadow-bubbly mb-4" style={{ fontFamily: 'var(--font-sans)' }}>
             Media Gallery
           </h2>
           <p className="text-xl text-white font-medium">Dive deeper into our underwater designs!</p>
