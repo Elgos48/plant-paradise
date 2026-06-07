@@ -177,7 +177,7 @@ export default function PlantTypes() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white text-shadow-bubbly mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-white text-shadow-bubbly mb-4" style={{ fontFamily: 'var(--font-spongebob)' }}>
             OUR PLANTS
           </h2>
           <p className="text-xl text-sand font-medium">Explore our collection of unique plants</p>

@@ -100,7 +100,7 @@ export default function CareGuide() {
       </svg>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-shadow-bubbly mb-4 text-[#40E0D0]">
+          <h2 className="text-4xl md:text-5xl font-bold text-shadow-bubbly mb-4 text-[#40E0D0]" style={{ fontFamily: 'var(--font-spongebob)' }}>
             Plant Care Guide
           </h2>
           <p className="text-xl text-sand">Keep your underwater garden thriving with these tips.</p>

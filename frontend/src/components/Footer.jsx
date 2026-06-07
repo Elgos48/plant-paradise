@@ -56,8 +56,8 @@ export default function Footer() {
           <h4 className="text-xl font-bold mb-4 text-[#40E0D0]">Explore</h4>
           <ul className="space-y-2 font-medium">
             <li><a href="#" className="hover:text-sand transition-colors">Plant Types</a></li>
+            <li><a href="#" className="hover:text-sand transition-colors">Media</a></li>
             <li><a href="#" className="hover:text-sand transition-colors">Care Guides</a></li>
-            <li><a href="#" className="hover:text-sand transition-colors">Growth Timeline</a></li>
           </ul>
         </div>
 

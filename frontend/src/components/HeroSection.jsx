@@ -67,7 +67,7 @@ export default function HeroSection() {
         >
           <Leaf className="w-8 h-8 md:w-12 md:h-12 text-seaweed drop-shadow-md animate-pulse" />
           <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-[#fff700] text-shadow-bubbly drop-shadow-xl tracking-wide"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-sand text-shadow-bubbly drop-shadow-xl tracking-wide"
             style={{ fontFamily: 'var(--font-spongebob)' }}
           >
             SPONGEGARDEN
